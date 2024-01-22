@@ -14,7 +14,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func registerCell() {
+    private func registerCell() {
         tableView.register(MainCell.self, forCellReuseIdentifier: MainCell.identifier)
     }
     
@@ -37,9 +37,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         60
     }
     
+    // Тап по ячейке
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let dataSource = viewModel.dataSource else { return }
-        print("\(indexPath.row)")
         presentDetailsViewController(user: dataSource[indexPath.row])
     }
 }

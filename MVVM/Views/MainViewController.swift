@@ -50,6 +50,7 @@ final class MainViewController: UIViewController {
         }
     }
     
+    // Переход на экран с детальной информацией
     func presentDetailsViewController(user: User) {
         let detailViewModel = DetailsViewModel(user: user)
         let detailViewController = DetailsViewController(detailViewModel)
