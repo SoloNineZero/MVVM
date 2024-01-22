@@ -12,10 +12,8 @@
 		A8655BE62B5835DC002DF370 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655BE52B5835DC002DF370 /* MainViewController.swift */; };
 		A8655BEB2B5835DE002DF370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8655BEA2B5835DE002DF370 /* Assets.xcassets */; };
 		A8655BEE2B5835DE002DF370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8655BEC2B5835DE002DF370 /* LaunchScreen.storyboard */; };
-		A8655BFB2B5838F5002DF370 /* MainViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655BFA2B5838F5002DF370 /* MainViewController + TableView.swift */; };
 		A8655BFD2B583B92002DF370 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655BFC2B583B92002DF370 /* MainViewModel.swift */; };
 		A8655C002B583E14002DF370 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655BFF2B583E14002DF370 /* EndPoint.swift */; };
-		A8655C022B583F09002DF370 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655C012B583F09002DF370 /* User.swift */; };
 		A8655C052B584093002DF370 /* Extension + URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655C042B584093002DF370 /* Extension + URLSession.swift */; };
 		A8655C072B5841A5002DF370 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655C062B5841A5002DF370 /* NetworkError.swift */; };
 		A8655C092B5841D4002DF370 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8655C082B5841D4002DF370 /* NetworkRequest.swift */; };
@@ -37,10 +35,8 @@
 		A8655BEA2B5835DE002DF370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8655BED2B5835DE002DF370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8655BEF2B5835DE002DF370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8655BFA2B5838F5002DF370 /* MainViewController + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + TableView.swift"; sourceTree = "<group>"; };
 		A8655BFC2B583B92002DF370 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A8655BFF2B583E14002DF370 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		A8655C012B583F09002DF370 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8655C042B584093002DF370 /* Extension + URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + URLSession.swift"; sourceTree = "<group>"; };
 		A8655C062B5841A5002DF370 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A8655C082B5841D4002DF370 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -118,7 +114,6 @@
 		A8655BF72B583724002DF370 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8655C012B583F09002DF370 /* User.swift */,
 				A8C4CB682B5ED23200B7A10F /* Word.swift */,
 			);
 			path = Models;
@@ -128,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				A8655BE52B5835DC002DF370 /* MainViewController.swift */,
-				A8655BFA2B5838F5002DF370 /* MainViewController + TableView.swift */,
 				A8C4CB5E2B5EBED700B7A10F /* MainCell.swift */,
 				A8C4CB622B5EC75800B7A10F /* DetailsViewController.swift */,
 			);
@@ -250,7 +244,6 @@
 			files = (
 				A8655C002B583E14002DF370 /* EndPoint.swift in Sources */,
 				A8655BE62B5835DC002DF370 /* MainViewController.swift in Sources */,
-				A8655BFB2B5838F5002DF370 /* MainViewController + TableView.swift in Sources */,
 				A8C4CB652B5EC7CB00B7A10F /* DetailsViewModel.swift in Sources */,
 				A8C4CB692B5ED23200B7A10F /* Word.swift in Sources */,
 				A8C4CB612B5EC38300B7A10F /* MainCellViewModel.swift in Sources */,
@@ -262,7 +255,6 @@
 				A8655BFD2B583B92002DF370 /* MainViewModel.swift in Sources */,
 				A8655C072B5841A5002DF370 /* NetworkError.swift in Sources */,
 				A8655C052B584093002DF370 /* Extension + URLSession.swift in Sources */,
-				A8655C022B583F09002DF370 /* User.swift in Sources */,
 				A8655C0B2B5843AA002DF370 /* NetworkDataFetch.swift in Sources */,
 				A8C4CB632B5EC75800B7A10F /* DetailsViewController.swift in Sources */,
 			);

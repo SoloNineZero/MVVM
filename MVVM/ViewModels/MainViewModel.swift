@@ -6,10 +6,6 @@ final class MainViewModel {
     var cellDataSource: Observable<[MainCellViewModel]> = Observable(nil)
     var dataSource: [Word]?
     
-    func numbersInSection() -> Int {
-        1
-    }
-    
     func numbersInRows(_ section: Int) -> Int {
         dataSource?.count ?? 0
     }
@@ -21,7 +17,7 @@ final class MainViewModel {
             guard let self else { return }
             self.isLoading.value = false
             if let wordData {
-                self.dataSource = wordData.data
+                self.dataSource = wordData.data.reversed()
                 mapCellData()
             }
         }
