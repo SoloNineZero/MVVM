@@ -4,7 +4,7 @@ final class MainViewModel {
     
     var isLoading: Observable<Bool> = Observable(false)
     var cellDataSource: Observable<[MainCellViewModel]> = Observable(nil)
-    var dataSource: [User]?
+    var dataSource: [Word]?
     
     func numbersInSection() -> Int {
         1
@@ -17,11 +17,11 @@ final class MainViewModel {
     func getUsers() {
         isLoading.value = true
         
-        NetworkDataFetch.shared.fetchUsers { [weak self] users, error in
+        NetworkDataFetch.shared.fetchWords { [weak self] wordData, error in
             guard let self else { return }
             self.isLoading.value = false
-            if let users {
-                self.dataSource = users
+            if let wordData {
+                self.dataSource = wordData.data
                 mapCellData()
             }
         }

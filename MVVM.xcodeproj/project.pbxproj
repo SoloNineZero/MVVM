@@ -25,6 +25,8 @@
 		A8C4CB612B5EC38300B7A10F /* MainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4CB602B5EC38300B7A10F /* MainCellViewModel.swift */; };
 		A8C4CB632B5EC75800B7A10F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4CB622B5EC75800B7A10F /* DetailsViewController.swift */; };
 		A8C4CB652B5EC7CB00B7A10F /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4CB642B5EC7CB00B7A10F /* DetailsViewModel.swift */; };
+		A8C4CB692B5ED23200B7A10F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4CB682B5ED23200B7A10F /* Word.swift */; };
+		A8C4CB6C2B5EE0C400B7A10F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A8C4CB6B2B5EE0C400B7A10F /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,7 @@
 		A8C4CB602B5EC38300B7A10F /* MainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellViewModel.swift; sourceTree = "<group>"; };
 		A8C4CB622B5EC75800B7A10F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A8C4CB642B5EC7CB00B7A10F /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		A8C4CB682B5ED23200B7A10F /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C4CB6C2B5EE0C400B7A10F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A8655C012B583F09002DF370 /* User.swift */,
+				A8C4CB682B5ED23200B7A10F /* Word.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +188,9 @@
 			dependencies = (
 			);
 			name = MVVM;
+			packageProductDependencies = (
+				A8C4CB6B2B5EE0C400B7A10F /* Kingfisher */,
+			);
 			productName = MVVM;
 			productReference = A8655BDE2B5835DC002DF370 /* MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +219,9 @@
 				Base,
 			);
 			mainGroup = A8655BD52B5835DC002DF370;
+			packageReferences = (
+				A8C4CB6A2B5EE0C400B7A10F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A8655BDF2B5835DC002DF370 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,6 +252,7 @@
 				A8655BE62B5835DC002DF370 /* MainViewController.swift in Sources */,
 				A8655BFB2B5838F5002DF370 /* MainViewController + TableView.swift in Sources */,
 				A8C4CB652B5EC7CB00B7A10F /* DetailsViewModel.swift in Sources */,
+				A8C4CB692B5ED23200B7A10F /* Word.swift in Sources */,
 				A8C4CB612B5EC38300B7A10F /* MainCellViewModel.swift in Sources */,
 				A8655BE22B5835DC002DF370 /* AppDelegate.swift in Sources */,
 				A8C4CB5D2B5EB1EE00B7A10F /* Observable.swift in Sources */,
@@ -475,6 +487,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8C4CB6A2B5EE0C400B7A10F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8C4CB6B2B5EE0C400B7A10F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8C4CB6A2B5EE0C400B7A10F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A8655BD62B5835DC002DF370 /* Project object */;
 }

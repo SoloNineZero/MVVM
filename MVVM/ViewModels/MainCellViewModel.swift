@@ -1,13 +1,12 @@
 import Foundation
 
 final class MainCellViewModel {
-    var name: String
-    var userName: String
-    var email: String
     
-    init(_ users: User) {
-        self.name = users.name
-        self.userName = users.username
-        self.email = users.email
+    var value: String
+    var image: URL
+    
+    init(_ word: Word) {
+        self.value = word.value
+        self.image = word.photo
     }
 }

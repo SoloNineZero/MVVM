@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 final class MainCell: UITableViewCell {
     
@@ -6,10 +7,8 @@ final class MainCell: UITableViewCell {
         "MainCell"
     }
     
-    private let nameLabel = UILabel()
-    private let usernameLabel = UILabel()
-    private let emailLabel = UILabel()
-    private var labelsStackView = UIStackView()
+    private let valueLabel = UILabel()
+    private let photoImageView = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,29 +22,39 @@ final class MainCell: UITableViewCell {
     }
     
     private func setupView() {
-        nameLabel.font = .systemFont(ofSize: 16)
-        usernameLabel.font = .systemFont(ofSize: 14)
-        emailLabel.font = .systemFont(ofSize: 14)
-        emailLabel.textColor = .gray
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        valueLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        labelsStackView = UIStackView(arrangedSubviews: [nameLabel, usernameLabel,emailLabel])
-        labelsStackView.axis = .vertical
-        labelsStackView.spacing = 2
-        labelsStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(labelsStackView)
+        [photoImageView, valueLabel].forEach({ addSubview($0) })
     }
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            labelsStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            labelsStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20)
+            photoImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            photoImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            photoImageView.heightAnchor.constraint(equalToConstant: frame.height),
+            photoImageView.widthAnchor.constraint(equalToConstant: frame.height),
+            
+            valueLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            valueLabel.leftAnchor.constraint(equalTo: photoImageView.rightAnchor, constant: 10),
+            valueLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20)
         ])
     }
     
     func setupCell(viewModel: MainCellViewModel) {
-        nameLabel.text = viewModel.name
-        usernameLabel.text = viewModel.userName
-        emailLabel.text = viewModel.email
+        valueLabel.text = viewModel.value
+
+        let url = viewModel.image
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 50, height: 50))
+        photoImageView.kf.indicatorType = .activity
+        photoImageView.kf.setImage(
+            with: url,
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]
+        )
     }
 }

@@ -1,15 +1,10 @@
 import UIKit
 
- class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController {
     
-    private let nameLabel = UILabel()
-    private let usernameLabel = UILabel()
-    private let emailLabel = UILabel()
-    private let phoneLabel = UILabel()
-     
-    private let streetLabel = UILabel()
-    private let suiteLabel = UILabel()
-    private let cityLabel = UILabel()
+    private let valueLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let photoImageView = UIImageView()
     
     private var labelsStackView = UIStackView()
     
@@ -29,35 +24,57 @@ import UIKit
         
         setupView()
         setConstraints()
-        displayUserInfo()
+        displayWordInfo()
+//        loadImage()
     }
     
     private func setupView() {
-        title = "User Details"
         
-        view.backgroundColor = .white        
-        labelsStackView = UIStackView(arrangedSubviews: [nameLabel, usernameLabel, emailLabel, phoneLabel, streetLabel, suiteLabel, cityLabel])
+        view.backgroundColor = .white
+        valueLabel.font = .italicSystemFont(ofSize: 20)
+        descriptionLabel.numberOfLines = 0
+        
+        labelsStackView = UIStackView(arrangedSubviews: [valueLabel, descriptionLabel])
         labelsStackView.axis = .vertical
-        labelsStackView.spacing = 2
+        labelsStackView.spacing = 10
         labelsStackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
+        photoImageView.layer.cornerRadius = 20
+        photoImageView.clipsToBounds = true
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        view.addSubview(photoImageView)
         view.addSubview(labelsStackView)
     }
     
-    private func displayUserInfo() {
-        nameLabel.text = detailsViewModel.name
-        usernameLabel.text = detailsViewModel.username
-        emailLabel.text = detailsViewModel.email
-        phoneLabel.text = detailsViewModel.phone
-        streetLabel.text = detailsViewModel.street
-        suiteLabel.text = detailsViewModel.suite
-        cityLabel.text = detailsViewModel.city
+    private func displayWordInfo() {
+        valueLabel.text = detailsViewModel.value
+        descriptionLabel.text = detailsViewModel.description
+        loadImage()
+    }
+    
+    private func loadImage() {
+        DispatchQueue.global().async {
+            if let imageData = try? Data(contentsOf: self.detailsViewModel.image),
+               let image = UIImage(data: imageData) {
+                DispatchQueue.main.async {
+                    self.photoImageView.image = image
+                }
+            }
+        }
     }
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            labelsStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            labelsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+            photoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            photoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            photoImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor),
+            
+            labelsStackView.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 20),
+            labelsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            labelsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ])
     }
 }

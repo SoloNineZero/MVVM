@@ -8,7 +8,7 @@ extension EndPoint {
     var url: URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "jsonplaceholder.typicode.com"
+        components.host = "api.easy-recipes.ru"
         components.path = "/" + path
         
         guard let url = components.url else {
@@ -20,6 +20,6 @@ extension EndPoint {
 
 extension EndPoint {
     static var users: Self {
-        EndPoint(path: "users")
+        EndPoint(path: "api/word-view")
     }
 }

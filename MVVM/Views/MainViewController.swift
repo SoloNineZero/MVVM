@@ -51,8 +51,8 @@ final class MainViewController: UIViewController {
     }
     
     // Переход на экран с детальной информацией
-    func presentDetailsViewController(user: User) {
-        let detailViewModel = DetailsViewModel(user: user)
+    func presentDetailsViewController(user: Word) {
+        let detailViewModel = DetailsViewModel(word: user)
         let detailViewController = DetailsViewController(detailViewModel)
         navigationController?.pushViewController(detailViewController, animated: true)
     }

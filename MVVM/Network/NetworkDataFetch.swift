@@ -5,13 +5,13 @@ final class NetworkDataFetch {
     
     private init() {}
     
-    func fetchUsers(response: @escaping ([User]?, NetworkError?) -> Void) {
+    func fetchWords(response: @escaping (WordData?, NetworkError?) -> Void) {
         NetworkRequest.shared.getData { result in
             switch result {
             case .success(let data):
                 do {
-                    let users = try JSONDecoder().decode([User].self, from: data)
-                    response(users, nil)
+                    let wordData = try JSONDecoder().decode(WordData.self, from: data)
+                    response(wordData, nil)
                 } catch let jsonError{
                     print("Failed to decode JSON", jsonError)
                 }
